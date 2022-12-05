@@ -26,6 +26,7 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
+    console.log(createUserDto);
     console.log('Entrou no post');
     return this.createUser.execute(createUserDto);
   }

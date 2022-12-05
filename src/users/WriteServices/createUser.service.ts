@@ -8,6 +8,7 @@ export class CreateUserService {
   constructor(@Inject(UserRepository) private repository: UserRepository) {}
   async execute(body: CreateUserDto) {
     try {
+      console.log(body);
       const hashed = await argon.hash(body.password);
       body.password = hashed;
       return this.repository.create(body);
