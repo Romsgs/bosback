@@ -6,6 +6,7 @@ import { CreateUserService } from './WriteServices/createUser.service';
 import { DeleteUserService } from './WriteServices/deleteUser.service';
 import { UserRepository } from './repository/user.repository';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { UsersService } from './users.service';
 
 @Module({
   controllers: [UsersController],
@@ -16,6 +17,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
     DeleteUserService,
     UserRepository,
     PrismaService,
+    UsersService,
   ],
 })
 export class UsersModule {}
