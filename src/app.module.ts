@@ -15,7 +15,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     AuthModule,
     // PocoesModule,
-    // PotionsModule,
+    PotionsModule,
     // SpellsModule,
     UsersModule,
     // RitualsModule,

@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PotionsService } from './potions.service';
 import { CreatePotionDto } from './dto/create-potion.dto';
 import { UpdatePotionDto } from './dto/update-potion.dto';
@@ -8,7 +16,7 @@ export class PotionsController {
   constructor(private readonly potionsService: PotionsService) {}
 
   @Post()
-  create(@Body() createPotionDto: CreatePotionDto) {
+  async create(@Body() createPotionDto: CreatePotionDto) {
     return this.potionsService.create(createPotionDto);
   }
 
@@ -18,8 +26,8 @@ export class PotionsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.potionsService.findOne(+id);
+  findById(@Param('id') id: string) {
+    return this.potionsService.findById(id);
   }
 
   @Patch(':id')
